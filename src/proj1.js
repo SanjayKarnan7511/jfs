@@ -14,6 +14,6 @@ function Proj1(){
             <h1>Current Time</h1>
             <h2>{time.toLocaleTimeString()}</h2>
         </div>
-    );
+);
 }
 export default Proj1;

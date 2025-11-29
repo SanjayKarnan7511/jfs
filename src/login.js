@@ -6,7 +6,6 @@ function Login({ onSuccess }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [show, setShow] = useState(false);
-
   const Password1 = () => {
     setShow(prev => !prev);
   };

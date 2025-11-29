@@ -13,7 +13,6 @@ function App() {
       <div style={{display:'flex',gap:10,justifyContent:'center',marginTop:12}}>
         <button className="addbtn" onClick={()=>setView('login')}>LOGIN</button>
         <button className="addbtn" onClick={()=>setView('todo')}>TODO</button>
-        
         <button className="addbtn" onClick={()=>setView('proj1')}>CLOCK</button>
       </div>
 
