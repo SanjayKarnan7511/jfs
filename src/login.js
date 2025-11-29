@@ -5,7 +5,11 @@ function Login({ onSuccess }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [show, setShow] = useState(false);
 
+  const Password1 = () => {
+    setShow(prev => !prev);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
@@ -23,13 +27,17 @@ function Login({ onSuccess }) {
           Email
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </label>
-        <label>
+        <label style={{display:'flex',flexDirection:'column',gap:6}}>
           Password
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <div style={{display:'flex',gap:8,alignItems:'center'}}>
+            <input type={show ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button type="button" className="show-btn" onClick={Password1}>{show ? 'Hide' : 'Show'}</button>
+          </div>
         </label>
         {error && <div className="error">{error}</div>}
         <div className="row">
           <button type="submit" className="addbtn">Sign in</button>
+          
         </div>
       </form>
     </div>
